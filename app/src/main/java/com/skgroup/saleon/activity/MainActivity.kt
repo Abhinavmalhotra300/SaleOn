@@ -1,7 +1,8 @@
-package com.skgroup.saleon
+package com.skgroup.saleon.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.skgroup.saleon.R
 
 class MainActivity : AppCompatActivity() {
 
