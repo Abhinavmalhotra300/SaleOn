@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".activity.MainActivity">
+
+
+    <com.github.demono.AutoScrollViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:stopWhenTouch="true"
+            app:slideInterval="3000"
+            app:slideDirection="right"
+            app:slideDuration="300"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:background="@drawable/fill_rounded"
+                android:text="@string/login"
+                android:gravity="center"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/myriad_bold"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:background="@drawable/unfill_rounded"
+                android:text="@string/signup"
+                android:gravity="center"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/myriad_bold"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:background="@drawable/unfill_rounded"
+                android:text="@string/continueasguest"
+                android:gravity="center"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/myriad_bold"/>
+    </LinearLayout>
+
+</RelativeLayout>
