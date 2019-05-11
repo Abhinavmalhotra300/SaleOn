@@ -2,25 +2,22 @@
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        android:focusableInTouchMode="true"
-        tools:ignore="Autofill,TextFields">
+        android:focusableInTouchMode="true">
     <ImageView
-            android:id="@+id/back"
+            android:id="@+id/mBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/svg_back"
             android:layout_margin="@dimen/_5sdp"
-            android:padding="@dimen/_5sdp"
-            tools:ignore="ContentDescription"/>
+            android:padding="@dimen/_5sdp"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_35sdp"
-            android:text="@string/login"
+            android:text="@string/signup"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/_22sdp"
             android:layout_gravity="center"
@@ -35,18 +32,15 @@
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:orientation="horizontal">
-            <EditText
-                    android:id="@+id/username"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_35sdp"
-                    android:background="@drawable/edittext_background"
-                    android:hint="@string/username"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_11sdp"
-                    android:paddingStart="@dimen/_5sdp"
-                    android:paddingEnd="@dimen/_5sdp"
-                    android:fontFamily="@font/myriad_regular"
-                    tools:ignore="Autofill,TextFields"/>
+            <EditText android:layout_width="match_parent"
+                      android:layout_height="@dimen/_35sdp"
+                      android:background="@drawable/edittext_background"
+                      android:hint="@string/username"
+                      android:textColor="@color/black"
+                      android:textSize="@dimen/_11sdp"
+                      android:paddingStart="@dimen/_5sdp"
+                      android:paddingEnd="@dimen/_5sdp"
+                      android:fontFamily="@font/myriad_regular"/>
         </LinearLayout>
         <LinearLayout
                 android:layout_width="match_parent"
@@ -54,7 +48,38 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal">
             <EditText
-                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="@string/email"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/myriad_regular"/>
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="@string/mobile"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/myriad_regular"/>
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+            <EditText
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_35sdp"
                     android:background="@drawable/edittext_background"
@@ -66,8 +91,25 @@
                     android:fontFamily="@font/myriad_regular"
             />
         </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="@string/confirm_password"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/myriad_regular"
+            />
+        </LinearLayout>
         <Button
-                android:id="@+id/login"
+                android:id="@+id/mLogin"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_35sdp"
                 android:background="@drawable/fill_rounded"
@@ -78,49 +120,15 @@
                 android:fontFamily="@font/myriad_semibold"
                 android:layout_marginTop="@dimen/_20sdp"/>
 
-        <TextView
-                android:id="@+id/forgetpassword"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:text="@string/forget_password"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_11sdp"
-                android:paddingStart="@dimen/_5sdp"
-                android:paddingEnd="@dimen/_5sdp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/myriad_regular"
-        />
-
-        <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            <View android:layout_width="match_parent"
-                  android:layout_height="@dimen/_1sdp"
-                  android:background="@color/gray"
-                  android:layout_centerInParent="true"
-                  android:layout_marginStart="@dimen/_10sdp"
-                  android:layout_marginEnd="@dimen/_10sdp"/>
-            <TextView android:layout_width="wrap_content"
+        <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
-                      android:text="@string/or"
-                      android:background="@color/white"
-                      android:textSize="@dimen/_13sdp"
-                      android:textColor="@color/gray"
-                      android:padding="@dimen/_5sdp"
-                      android:layout_centerInParent="true"/>
-        </RelativeLayout>
-        <LinearLayout
-                android:id="@+id/signup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center">
+                      android:orientation="horizontal"
+                      android:gravity="center"
+                      android:layout_marginTop="@dimen/_10sdp">
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/_35sdp"
-                    android:text="@string/have_not_account"
+                    android:text="@string/havenotaccount"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_11sdp"
                     android:paddingStart="@dimen/_5sdp"
@@ -132,12 +140,13 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/_35sdp"
-                    android:text="@string/signup"
+                    android:text="@string/login"
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/_11sdp"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:fontFamily="@font/myriad_semibold"/>
+                    android:fontFamily="@font/myriad_semibold"
+            />
         </LinearLayout>
 
     </LinearLayout>

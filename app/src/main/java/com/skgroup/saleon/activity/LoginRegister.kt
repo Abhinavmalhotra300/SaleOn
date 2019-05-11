@@ -33,7 +33,7 @@ class LoginRegister : AppCompatActivity() {
 
         /*ClickListener*/
         mLogin.setOnClickListener { startActivity(Intent(this@LoginRegister,Login::class.java)) }
-        mSignup.setOnClickListener { startActivity(Intent(this@LoginRegister,Login::class.java)) }
+        mSignup.setOnClickListener { startActivity(Intent(this@LoginRegister,SignUp::class.java)) }
         mAsGuest.setOnClickListener { startActivity(Intent(this@LoginRegister,Login::class.java)) }
     }
     fun setBanner()

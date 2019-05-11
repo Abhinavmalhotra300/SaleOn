@@ -2,5 +2,14 @@
     <string name="app_name">SaleOn</string>
     <string name="login">Login</string>
     <string name="signup">Sign Up</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="mobile">Mobile</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="havenotaccount">Already have account?</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="or">Or</string>
+    <string name="have_not_account">Don\'t have any account?</string>
     <string name="continueasguest">Continue As Guest</string>
 </resources>
