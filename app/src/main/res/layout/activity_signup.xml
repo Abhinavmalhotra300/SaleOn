@@ -32,15 +32,17 @@
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:orientation="horizontal">
-            <EditText android:layout_width="match_parent"
-                      android:layout_height="@dimen/_35sdp"
-                      android:background="@drawable/edittext_background"
-                      android:hint="@string/username"
-                      android:textColor="@color/black"
-                      android:textSize="@dimen/_11sdp"
-                      android:paddingStart="@dimen/_5sdp"
-                      android:paddingEnd="@dimen/_5sdp"
-                      android:fontFamily="@font/myriad_regular"/>
+            <EditText
+                    android:id="@+id/firstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="@string/firstname"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/myriad_regular"/>
         </LinearLayout>
         <LinearLayout
                 android:layout_width="match_parent"
@@ -48,6 +50,24 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal">
             <EditText
+                    android:id="@+id/lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="@string/lastname"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/myriad_regular"/>
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+            <EditText
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_35sdp"
                     android:background="@drawable/edittext_background"
@@ -64,6 +84,7 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal">
             <EditText
+                    android:id="@+id/mobile"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_35sdp"
                     android:background="@drawable/edittext_background"
@@ -80,6 +101,7 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal">
             <EditText
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_35sdp"
                     android:background="@drawable/edittext_background"
@@ -97,6 +119,7 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal">
             <EditText
+                    android:id="@+id/confirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_35sdp"
                     android:background="@drawable/edittext_background"
@@ -109,22 +132,25 @@
             />
         </LinearLayout>
         <Button
-                android:id="@+id/mLogin"
+                android:id="@+id/signup"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_35sdp"
                 android:background="@drawable/fill_rounded"
-                android:text="@string/login"
+                android:text="@string/signup"
                 android:gravity="center"
                 android:textSize="@dimen/_13ssp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/myriad_semibold"
                 android:layout_marginTop="@dimen/_20sdp"/>
 
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:orientation="horizontal"
-                      android:gravity="center"
-                      android:layout_marginTop="@dimen/_10sdp">
+        <LinearLayout
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp">
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/_35sdp"

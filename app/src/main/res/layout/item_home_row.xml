@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/clickable">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp">
+
+        <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
+        <RelativeLayout android:id="@+id/alphaview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black"
+                        android:alpha=".5">
+        </RelativeLayout>
+        <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_fileName="clock.json"
+                android:layout_centerInParent="true"/>
+        <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/animation"
+                android:textSize="@dimen/_13ssp"
+                android:text="12/May/2019,Sun, 12:00 PM"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:fontFamily="@font/myriad_regular"/>
+
+        <TextView
+                android:id="@+id/saleTill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/animation"
+                android:textSize="@dimen/_13ssp"
+                android:layout_centerInParent="true"
+                android:text="Sale Till 02:00 PM"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/myriad_regular"
+                android:padding="@dimen/_5sdp"
+                android:background="@drawable/unfill_rounded_yellow"
+                android:visibility="gone"/>
+    </RelativeLayout>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="@dimen/_1sdp"
+          android:background="@color/hint">
+    </View>
+</LinearLayout>

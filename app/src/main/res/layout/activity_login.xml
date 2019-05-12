@@ -36,11 +36,11 @@
                       android:layout_height="wrap_content"
                       android:orientation="horizontal">
             <EditText
-                    android:id="@+id/username"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_35sdp"
                     android:background="@drawable/edittext_background"
-                    android:hint="@string/username"
+                    android:hint="@string/email"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_11sdp"
                     android:paddingStart="@dimen/_5sdp"
@@ -127,8 +127,7 @@
                     android:paddingEnd="@dimen/_5sdp"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:fontFamily="@font/myriad_regular"
-            />
+                    android:fontFamily="@font/myriad_regular"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/_35sdp"

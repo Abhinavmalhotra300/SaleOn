@@ -9,7 +9,7 @@ import android.widget.LinearLayout
 import androidx.viewpager.widget.PagerAdapter
 import com.skgroup.saleon.R
 
-class Home_Adapter(mContext: Activity,val array: ArrayList<Int>?) : PagerAdapter() {
+class Slider_Adapter(mContext: Activity, val array: ArrayList<Int>?) : PagerAdapter() {
     private val mLayoutInflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
     override fun getCount(): Int {
         return array!!.size
