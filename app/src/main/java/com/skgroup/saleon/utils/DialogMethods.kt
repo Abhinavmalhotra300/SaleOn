@@ -42,6 +42,5 @@ object DialogMethods {
 
     fun dialogWaitForSometime(activity: Activity) {
         Toast.makeText(activity, "Wait For SomeTime", Toast.LENGTH_LONG).show()
-
     }
 }
