@@ -1,8 +1,12 @@
 package com.skgroup.saleon.utils
 
 import android.app.Activity
+import android.app.Dialog
+import android.graphics.Point
+import android.view.Display
+import android.view.Window
 import android.widget.Button
-import android.widget.Toast
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -41,6 +45,23 @@ object DialogMethods {
     }
 
     fun dialogWaitForSometime(activity: Activity) {
-        Toast.makeText(activity, "Wait For SomeTime", Toast.LENGTH_LONG).show()
+
+        val dialog = Dialog(activity)
+        dialog.window?.requestFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.dialog_message)
+        val mLayout = dialog.findViewById<LinearLayout>(R.id.lay)
+        mLayout.layoutParams.width = getWidth(activity)
+        val mCancel = dialog.findViewById<Button>(R.id.cancel)
+        mCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
+    }
+
+    private fun getWidth(activity: Activity): Int {
+        val display: Display = activity.windowManager.defaultDisplay
+        val point = Point()
+        display.getSize(point)
+        return (point.x * 0.8).toInt()
     }
 }
