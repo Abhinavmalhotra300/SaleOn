@@ -37,7 +37,7 @@ class FilterAdapter(
         holder.mClickable.setOnClickListener {
             mSelectedPosition = position
             this.notifyDataSetChanged()
-            mFilterItemListener?.onFliterItemClick("$position")
+            mFilterItemListener?.onFilterItemClick("$position")
         }
     }
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

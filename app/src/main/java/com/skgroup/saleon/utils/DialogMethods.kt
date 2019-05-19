@@ -33,7 +33,7 @@ object DialogMethods {
         val mRecyclerViewFilter = dialog.findViewById<RecyclerView>(R.id.recyclerViewFilter)
         mRecyclerViewFilter?.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         mRecyclerViewFilter?.adapter = FilterAdapter(activity, object : OnFilterItemClickListener {
-            override fun onFliterItemClick(type: String) {
+            override fun onFilterItemClick(type: String) {
                 mType = type
             }
         })

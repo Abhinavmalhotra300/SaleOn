@@ -9,18 +9,18 @@ import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.skgroup.saleon.listener.OnItemClickListener
 import com.skgroup.saleon.R
-import com.skgroup.saleon.responseModel.saleItemModel
+import com.skgroup.saleon.responseModel.SaleItemModel
 import com.skgroup.saleon.utils.CommonMethods
 
 class ItemAdapter(private var mContext: Activity) :
     RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
 
-    private var dataList: ArrayList<saleItemModel> = ArrayList()
+    private var dataList: ArrayList<SaleItemModel> = ArrayList()
     private var mListener: OnItemClickListener? = null
 
 
-    fun setData(data: ArrayList<saleItemModel>) {
+    fun setData(data: ArrayList<SaleItemModel>) {
         dataList.clear()
         dataList.addAll(data)
         this.notifyDataSetChanged()

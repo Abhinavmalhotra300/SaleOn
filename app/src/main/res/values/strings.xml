@@ -16,8 +16,19 @@
     <string name="done">Done</string>
     <string name="cancel">Cancel</string>
     <string name="submit">Submit</string>
+    <string name="Select">Select</string>
+    <string name="UnSelect">Unselect</string>
+    <string name="Size">Size :</string>
+    <string name="description">Description :</string>
     <string name="have_not_account">Don\'t have any account?</string>
     <string name="continueasguest">Continue As Guest</string>
+    <string name="dummyText">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when
+        an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when
+        an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </string>
 
     <string name="forgetpasswordmessage">Enter your email associate with this account \n so we can send you email</string>
 

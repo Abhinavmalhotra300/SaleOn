@@ -7,19 +7,18 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
 import com.skgroup.saleon.listener.OnItemClickListener
 import com.skgroup.saleon.R
-import com.skgroup.saleon.responseModel.saleItemModel
+import com.skgroup.saleon.responseModel.SaleItemModel
 import com.skgroup.saleon.utils.CommonMethods
 import com.skgroup.saleon.utils.DialogMethods
 
 class HomeItemAdapter(
-    var mContext: Activity,
-    var data: ArrayList<saleItemModel>,
-    var mListener: OnItemClickListener?
+    private var mContext: Activity,
+    private var data: ArrayList<SaleItemModel>,
+    private var mListener: OnItemClickListener?
 ) : RecyclerView.Adapter<HomeItemAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_home_row, parent, false))

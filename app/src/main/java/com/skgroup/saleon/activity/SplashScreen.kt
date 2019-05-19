@@ -8,10 +8,11 @@ import com.skgroup.saleon.activity.loginsignup.LoginRegister
 import com.skgroup.saleon.utils.CommonMethods
 
 class SplashScreen : AppCompatActivity() {
+    var mHandler: Handler = Handler()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        Handler().postDelayed({
+        mHandler.postDelayed({
             CommonMethods.instance().intent(this, LoginRegister::class.java, null)
             finish()
         }, 1500)

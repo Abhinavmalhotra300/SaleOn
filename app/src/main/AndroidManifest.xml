@@ -24,5 +24,6 @@
         <activity android:name=".activity.loginsignup.ForgetPassword"/>
         <activity android:name=".activity.HomeScreen"/>
         <activity android:name=".activity.ItemList"/>
+        <activity android:name=".activity.ItemDetail"/>
     </application>
 </manifest>

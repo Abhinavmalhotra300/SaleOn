@@ -18,17 +18,19 @@ class ForgetPassword : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgetpassword)
-        this@ForgetPassword.runOnUiThread {
+        this.runOnUiThread {
             init()
             listeners()
         }
     }
-    private fun init() {
+    private fun init()
+    {
         mBack = findViewById(R.id.back)
         mEmail = findViewById(R.id.email)
         mSubmit = findViewById(R.id.submit)
     }
-    private fun listeners() {
+    private fun listeners()
+    {
         mBack?.setOnClickListener {
             onBackPressed()
         }
@@ -36,8 +38,8 @@ class ForgetPassword : AppCompatActivity() {
 
         }
     }
-
-    override fun onBackPressed() {
+    override fun onBackPressed()
+    {
         super.onBackPressed()
         CommonMethods.instance().finish(this)
     }

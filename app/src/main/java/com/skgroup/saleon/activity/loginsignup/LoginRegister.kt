@@ -1,7 +1,5 @@
 package com.skgroup.saleon.activity.loginsignup
 
-import android.app.Activity
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -20,31 +18,32 @@ class LoginRegister : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_signup)
-        this@LoginRegister.runOnUiThread {
+        this.runOnUiThread {
             setBanner()
             init()
         }
     }
 
     private fun init() {
+
+        /* val mViewPager = findViewById<AutoScrollViewPager>(R.id.viewPager)
+        val adapter = InfinitePager(Slider_Adapter(this, arrayBanner))
+        mViewPager.adapter = adapter
+        mViewPager.startAutoScroll()*/
+
         /*ImageView*/
         mBannerImage = findViewById(R.id.bannerImage)
 
-        /* val mViewPager = findViewById<AutoScrollViewPager>(R.id.viewPager)
-         val adapter = InfinitePager(Slider_Adapter(this, arrayBanner))
-         mViewPager.adapter = adapter
-         mViewPager.startAutoScroll()*/
-
         /*ClickListener*/
         mLogin.setOnClickListener {
-            CommonMethods.instance().intent(this@LoginRegister,Login::class.java,null)
+            CommonMethods.instance().intent(this,Login::class.java,null)
         }
         mSignup.setOnClickListener {
-            CommonMethods.instance().intent(this@LoginRegister,SignUp::class.java,null)
+            CommonMethods.instance().intent(this,SignUp::class.java,null)
         }
         mAsGuest.setOnClickListener {
-            CommonMethods.instance().intent(this@LoginRegister,HomeScreen::class.java,null)
-            finishAffinity()
+            CommonMethods.instance().intent(this,HomeScreen::class.java,null)
+            finish()
         }
     }
     private fun setBanner() {
