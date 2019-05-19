@@ -3,29 +3,30 @@ package com.skgroup.saleon.activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.skgroup.saleon.OnItemClickListener
+import com.skgroup.saleon.listener.OnItemClickListener
 import com.skgroup.saleon.R
+import com.skgroup.saleon.activity.loginsignup.SignUp
 import com.skgroup.saleon.adapter.HomeItemAdapter
 import com.skgroup.saleon.responseModel.saleItemModel
+import com.skgroup.saleon.utils.CommonMethods
 
-class HomeScreen : AppCompatActivity(),OnItemClickListener {
-    var toolbar: Toolbar? = null
-    var mMenu: ImageView? = null
-    var mDrawerLayout: DrawerLayout? = null
+class HomeScreen : AppCompatActivity(), OnItemClickListener {
 
-    var mItemRecyclerView: RecyclerView? = null
-    var data: ArrayList<saleItemModel> = ArrayList()
-
+    /*ImageView*/
+    private var mMenu: ImageView? = null
+    /*DrawerLayout*/
+    private var mDrawerLayout: DrawerLayout? = null
+    /*RecyclerView*/
+    private var mItemRecyclerView: RecyclerView? = null
     /*Adapter Click Listener*/
-
-    var mListener:OnItemClickListener?=null
+    private var mListener: OnItemClickListener?=null
+    /*ArrayList*/
+    private var data: ArrayList<saleItemModel> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,28 +37,22 @@ class HomeScreen : AppCompatActivity(),OnItemClickListener {
             listener()
         }
     }
-
-    fun init() {
+    private fun init() {
         mListener=this
-        toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
         mMenu = findViewById(R.id.menu)
-
-        /*drawerlayout*/
+        /*DrawerLayout*/
         mDrawerLayout = findViewById(R.id.drawer_layout)
 
-        /*recyclerview*/
+        /*RecyclerView*/
         mItemRecyclerView = findViewById(R.id.recyclerView)
         mItemRecyclerView?.layoutManager = LinearLayoutManager(this)
         mItemRecyclerView?.adapter = HomeItemAdapter(this@HomeScreen,setData(),mListener)
-
     }
-
-    fun listener() {
+    private fun listener() {
         mMenu?.setOnClickListener { mDrawerLayout?.openDrawer(GravityCompat.START) }
     }
     override fun onItemClick(position: Int) {
-        startActivity(Intent(this@HomeScreen,ItemList::class.java))
+        CommonMethods.instance().intent(this, ItemList::class.java, null)
     }
     override fun onBackPressed() {
         if (mDrawerLayout!!.isDrawerOpen(GravityCompat.START))
@@ -66,8 +61,7 @@ class HomeScreen : AppCompatActivity(),OnItemClickListener {
             super.onBackPressed()
 
     }
-
-    fun setData() : ArrayList<saleItemModel> {
+   private fun setData() : ArrayList<saleItemModel> {
         data.add(saleItemModel("0","https://images-na.ssl-images-amazon.com/images/G/01/Shopbop/p/pcs/media/3/images/lp/sale/saleclothes/lb_sale_clothing_1-2.jpg"))
         data.add(saleItemModel("1","https://culture.evo.com/wp-content/uploads/2013/06/sale-clothing.jpg"))
         data.add(saleItemModel("0","https://media.apnarm.net.au/media/images/2018/03/13/store-1338629_960_720-gwr3pxppf6l0tdx5xp2_fct953x535_ct677x380.jpg"))

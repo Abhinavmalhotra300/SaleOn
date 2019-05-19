@@ -14,4 +14,16 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"/>
     </RelativeLayout>
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Jeans"
+              android:textColor="@color/textColor"
+              android:layout_gravity="center"
+              android:padding="@dimen/_5sdp"
+              android:textSize="@dimen/_11sdp"
+              android:fontFamily="@font/myriad_semibold"/>
+    <View android:layout_width="match_parent"
+          android:layout_height="@dimen/_1sdp"
+          android:background="@color/hint">
+    </View>
 </LinearLayout>

@@ -1,6 +1,6 @@
 package com.skgroup.saleon.adapter
 
-import android.content.Context
+import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,13 +10,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
-import com.bumptech.glide.Glide
-import com.skgroup.saleon.OnItemClickListener
+import com.skgroup.saleon.listener.OnItemClickListener
 import com.skgroup.saleon.R
 import com.skgroup.saleon.responseModel.saleItemModel
+import com.skgroup.saleon.utils.CommonMethods
+import com.skgroup.saleon.utils.DialogMethods
 
 class HomeItemAdapter(
-    var mContext: Context,
+    var mContext: Activity,
     var data: ArrayList<saleItemModel>,
     var mListener: OnItemClickListener?
 ) : RecyclerView.Adapter<HomeItemAdapter.ViewHolder>() {
@@ -29,7 +30,11 @@ class HomeItemAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Glide.with(holder.mImage.context).load(data[position].Image).into(holder.mImage)
+
+        /*ImageLoader*/
+        CommonMethods.instance().imageLoader(mContext, data[position].Image, holder.mImage)
+
+
         if (data[position].saleType == "0") {
             holder.mClockAnim.visibility = View.VISIBLE
             holder.mTime.visibility = View.VISIBLE
@@ -43,18 +48,17 @@ class HomeItemAdapter(
         }
         holder.mClickable.setOnClickListener {
             if (data[position].saleType == "0")
-                Toast.makeText(mContext, "Wait For SomeTime", Toast.LENGTH_LONG).show()
+                DialogMethods.instance().dialogWaitForSometime(mContext)
             else
                 mListener?.onItemClick(position)
         }
     }
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var mImage = itemView.findViewById<ImageView>(R.id.image)
-        var mClockAnim = itemView.findViewById<LottieAnimationView>(R.id.animation)
-        var mTime = itemView.findViewById<TextView>(R.id.time)
-        var mSaleTill = itemView.findViewById<TextView>(R.id.saleTill)
-        var mClickable = itemView.findViewById<LinearLayout>(R.id.clickable)
-
-
+        var mImage: ImageView = itemView.findViewById(R.id.image)
+        var mClockAnim:LottieAnimationView = itemView.findViewById(R.id.animation)
+        var mTime :TextView = itemView.findViewById(R.id.time)
+        var mSaleTill :TextView = itemView.findViewById(R.id.saleTill)
+        var mClickable :LinearLayout = itemView.findViewById(R.id.clickable)
     }
 }

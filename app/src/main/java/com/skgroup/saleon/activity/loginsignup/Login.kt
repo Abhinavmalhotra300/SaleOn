@@ -1,19 +1,25 @@
-package com.skgroup.saleon.activity
+package com.skgroup.saleon.activity.loginsignup
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.skgroup.saleon.R
+import com.skgroup.saleon.activity.HomeScreen
+import com.skgroup.saleon.utils.CommonMethods
 
 class Login : AppCompatActivity() {
 
+    /*ImageView*/
     private var mBack: ImageView?=null
+    /*EditText*/
     private var mEmail: EditText?=null
     private var mPassword: EditText?=null
+    /*Button*/
     private var mLogin: Button?=null
-    private var mSignUp: LinearLayout?=null
+    /*TextView*/
     private var mForgetPassword: TextView?=null
+    /*LinearLayout*/
+    private var mSignUp: LinearLayout?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,30 +29,33 @@ class Login : AppCompatActivity() {
             listeners()
         }
     }
-    fun init() {
+    private fun init() {
         mBack = findViewById(R.id.back)
         mEmail = findViewById(R.id.email)
         mPassword = findViewById(R.id.password)
         mLogin = findViewById(R.id.login)
         mSignUp = findViewById(R.id.signup)
         mForgetPassword = findViewById(R.id.forgetpassword)
-
     }
-    fun listeners() {
+    private fun listeners() {
         mBack?.setOnClickListener {
-            finish()
+            onBackPressed()
         }
         mLogin?.setOnClickListener {
-            startActivity(Intent(this@Login, HomeScreen::class.java))
+            CommonMethods.instance().intent(this, HomeScreen::class.java, null)
             finishAffinity()
         }
         mSignUp?.setOnClickListener {
-            startActivity(Intent(this@Login, SignUp::class.java))
+            CommonMethods.instance().intent(this, SignUp::class.java, null)
             finish()
         }
         mForgetPassword?.setOnClickListener {
-            startActivity(Intent(this@Login, ForgetPassword::class.java))
+            CommonMethods.instance().intent(this, ForgetPassword::class.java, null)
             finish()
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        CommonMethods.instance().finish(this)
     }
 }

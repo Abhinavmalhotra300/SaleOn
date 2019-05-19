@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tool="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
@@ -28,14 +28,33 @@
                     android:layout_marginStart="@dimen/_8sdp"
                     android:layout_toEndOf="@+id/back"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_15ssp"
+                    android:textSize="@dimen/_13ssp"
                     android:fontFamily="@font/myriad_bold"
                     android:layout_centerInParent="true"/>
+            <ImageView
+                    android:id="@+id/filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/svg_filter"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_15sdp"/>
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+    <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-    </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tool:listitem="@layout/item_row"
+                    app:spanCount="2">
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

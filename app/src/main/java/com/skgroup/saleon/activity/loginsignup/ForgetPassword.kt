@@ -1,15 +1,19 @@
-package com.skgroup.saleon.activity
+package com.skgroup.saleon.activity.loginsignup
 
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.skgroup.saleon.R
+import com.skgroup.saleon.utils.CommonMethods
 
 class ForgetPassword : AppCompatActivity() {
 
-    private var mBack: ImageView?=null
-    private var mEmail: EditText?=null
-    private var mSubmit: Button?=null
+    /*ImageView*/
+    private var mBack: ImageView? = null
+    /*EditText*/
+    private var mEmail: EditText? = null
+    /*Button*/
+    private var mSubmit: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,17 +23,22 @@ class ForgetPassword : AppCompatActivity() {
             listeners()
         }
     }
-    fun init() {
+    private fun init() {
         mBack = findViewById(R.id.back)
         mEmail = findViewById(R.id.email)
         mSubmit = findViewById(R.id.submit)
     }
-    fun listeners() {
+    private fun listeners() {
         mBack?.setOnClickListener {
-            finish()
+            onBackPressed()
         }
         mSubmit?.setOnClickListener {
 
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        CommonMethods.instance().finish(this)
     }
 }

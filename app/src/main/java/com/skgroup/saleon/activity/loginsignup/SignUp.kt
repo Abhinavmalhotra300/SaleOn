@@ -1,22 +1,25 @@
-package com.skgroup.saleon.activity
+package com.skgroup.saleon.activity.loginsignup
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.skgroup.saleon.R
+import com.skgroup.saleon.activity.HomeScreen
+import com.skgroup.saleon.utils.CommonMethods
 
 class SignUp : AppCompatActivity() {
 
+    /*ImageView*/
     private var mBack: ImageView? = null
-    private var mFirstname: EditText? = null
-    private var mLastname: EditText? = null
+    /*EditText*/
+    private var mFirstName: EditText? = null
+    private var mLastName: EditText? = null
     private var mEmail: EditText? = null
     private var mPhone: EditText? = null
     private var mPassword: EditText? = null
     private var mConfirmPassword: EditText? = null
-    private var mSignup: Button? = null
-    private var mLogin: LinearLayout? = null
+    /*Button*/
+    private var mSignUp: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,21 +30,29 @@ class SignUp : AppCompatActivity() {
         }
     }
 
-    fun init() {
+    private fun init() {
         mBack = findViewById(R.id.back)
-        mFirstname = findViewById(R.id.firstname)
-        mLastname = findViewById(R.id.lastname)
+        mFirstName = findViewById(R.id.firstname)
+        mLastName = findViewById(R.id.lastname)
         mEmail = findViewById(R.id.email)
         mPassword = findViewById(R.id.password)
-        mLogin = findViewById(R.id.login)
-        mSignup = findViewById(R.id.signup)
+        mSignUp = findViewById(R.id.signup)
         mPhone = findViewById(R.id.mobile)
         mConfirmPassword = findViewById(R.id.confirmPassword)
     }
 
-    fun listener() {
-        mBack?.setOnClickListener { finish() }
-        mSignup?.setOnClickListener { startActivity(Intent(this@SignUp, HomeScreen::class.java)) }
-        mLogin?.setOnClickListener { startActivity(Intent(this@SignUp, Login::class.java)) }
+    private fun listener() {
+        mBack?.setOnClickListener {
+            onBackPressed()
+        }
+        mSignUp?.setOnClickListener {
+            CommonMethods.instance().intent(this, HomeScreen::class.java, null)
+            finishAffinity()
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        CommonMethods.instance().finish(this)
     }
 }
