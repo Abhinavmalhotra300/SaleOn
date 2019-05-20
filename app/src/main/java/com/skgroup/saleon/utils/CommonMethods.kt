@@ -17,7 +17,10 @@ object CommonMethods {
 
     fun intent(activity: Activity, intentClass: Class<*>, bundle: Bundle?) {
         activity.runOnUiThread {
-            activity.startActivity(Intent(activity, intentClass))
+            var intent =Intent(Intent(activity, intentClass))
+            if (bundle!=null)
+                intent.putExtras(bundle)
+            activity.startActivity(intent)
             activity.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_in_right)
         }
     }

@@ -1,9 +1,11 @@
 package com.skgroup.saleon.activity
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,8 +26,12 @@ class ItemList : AppCompatActivity(), OnItemClickListener, OnFilterItemSelectLis
     private var mFilter: ImageView? = null
     /*TextView*/
     private var mHeader: TextView? = null
+    /*RelativeLayout*/
+    private var mOrderLay: RelativeLayout? = null
+
     /*ArrayList*/
     private var data: ArrayList<SaleItemModel> = ArrayList()
+    private var mSelectedItemrraylist: ArrayList<SaleItemModel> = ArrayList()
     /*Adapter Click Listener*/
     private var mListener: OnItemClickListener? = null
     private var mFilterItemSelectListener: OnFilterItemSelectListener? = null
@@ -50,6 +56,7 @@ class ItemList : AppCompatActivity(), OnItemClickListener, OnFilterItemSelectLis
         mBack = findViewById(R.id.back)
         mHeader = findViewById(R.id.header)
         mFilter = findViewById(R.id.filter)
+        mOrderLay = findViewById(R.id.orderLay)
 
         /*Adapter*/
         mAdapter = ItemAdapter(this)
@@ -73,7 +80,14 @@ class ItemList : AppCompatActivity(), OnItemClickListener, OnFilterItemSelectLis
 
     /*item click listener*/
     override fun onItemClick(position: Int) {
-        CommonMethods.instance().intent(this, ItemDetail::class.java, null)
+        val bundle = Bundle()
+        bundle.putString("id", "$position")
+        this.runOnUiThread {
+            val intent = Intent(Intent(this, ItemDetail::class.java))
+            intent.putExtras(bundle)
+            startActivityForResult(intent,1)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_in_right)
+        }
 
     }
 
@@ -82,6 +96,13 @@ class ItemList : AppCompatActivity(), OnItemClickListener, OnFilterItemSelectLis
 
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode==1)
+        {
+            Log.d("fvjvdfdjief",data?.getStringExtra("id"))
+        }
+    }
     override fun onBackPressed() {
         super.onBackPressed()
         CommonMethods.instance().finish(this)
